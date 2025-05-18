@@ -1,8 +1,8 @@
-# 🗺️ Visor de Rutas GPX / GeoJSON
+# Visor de Rutas GPX / GeoJSON
 
 Este proyecto es una SPA construida con **React** que permite cargar archivos de rutas en formato `.gpx`, `.geojson`y `.kmz` para visualizarlos en un mapa interactivo.
 
-## ✨ Características
+## Características
 
 - Visualización de rutas con **OpenLayers**.
 - Soporte para formatos `.gpx`, `.geojson`, `.kmz`.
