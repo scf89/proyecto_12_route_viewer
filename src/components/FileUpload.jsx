@@ -2,7 +2,7 @@ import { useRouteLoader } from '../hooks/useRouteLoader'
 import { useRoutesDispatch } from '../context/RouteContext'
 import React, { useState, useRef, memo } from 'react'
 
-const FileUpload = memo(function FileUpload() {
+const FileUpload = memo(function FileUpload(props) {
   const { parseFile } = useRouteLoader()
   const dispatch = useRoutesDispatch()
 
@@ -43,7 +43,6 @@ const FileUpload = memo(function FileUpload() {
 
   return (
     <form onSubmit={handleSubmit} style={{ textAlign: 'center', marginBottom: '2rem' }}>
-      {/* input oculto */}
       <input
         type="file"
         accept=".gpx,.kmz,.geojson,.json"
@@ -52,19 +51,19 @@ const FileUpload = memo(function FileUpload() {
         style={{ display: 'none' }}
       />
 
-      {/* botón estilizado para abrir el input */}
+      
       <button type="button" onClick={triggerFileInput} style={{ marginBottom: '1rem' }}>
         {file ? `📁 ${file.name}` : '📂 Seleccionar archivo'}
       </button>
 
       <br />
 
-      {/* botón de envío */}
+     
       <button type="submit" disabled={loading || !file}>
         {loading ? 'Cargando...' : 'Subir archivo'}
       </button>
 
-      {/* mensaje de error */}
+      
       {error && <p style={{ color: 'salmon', marginTop: '0.5rem' }}>{error}</p>}
     </form>
   )
